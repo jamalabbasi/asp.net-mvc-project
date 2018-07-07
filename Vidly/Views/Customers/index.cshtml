@@ -20,8 +20,9 @@ else
         <tbody>
             @foreach (var cust in Model.Customers)
             {
-                <tr>
-                    <td>@cust.Name</td>
+                var id = cust.Id + 1;
+                <tr>                   
+                    <td><a href="/Customers/detail/@id">@cust.Name</a></td>
                 </tr>
             }
         </tbody>

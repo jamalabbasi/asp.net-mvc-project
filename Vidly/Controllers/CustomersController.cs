@@ -24,5 +24,22 @@ namespace Vidly.Controllers
             };
             return View(viewModel);
         }
+        [Route("customers/Detail/{Id}")]
+        public ActionResult Detail(int Id)
+        {
+            var customers = new List<Customer>
+            {
+                new Customer {Name="Jamal" ,Id=1},
+                new Customer {Name="Bilal" ,Id=2}
+            };
+            foreach(var cust in customers)
+            {
+                if (cust.Id == Id)
+                {              
+                    return View(cust);
+                }
+            }
+            return HttpNotFound();
+        }
     }
 }

@@ -8,6 +8,7 @@ namespace Vidly.Models
 {
     public class Customer
     {
+
         public int Id { get; set; }
 
         
@@ -22,6 +23,7 @@ namespace Vidly.Models
         [Display(Name ="Membership Type")]
         public byte MembershipTypeId { get; set; }
 
+        [Min18YearsIfAMember]
         [Display(Name="Date Of Birth")]
         public DateTime? BirthDate { get; set; }
     }
